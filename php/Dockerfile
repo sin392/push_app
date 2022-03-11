@@ -21,6 +21,6 @@ RUN apt update \
             pdo_pgsql \
             pgsql
 
-WORKDIR /var/www/laravel_docker
+WORKDIR /var/www/push_app
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer

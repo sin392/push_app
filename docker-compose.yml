@@ -21,7 +21,7 @@ services:
     ports:
       - "8080:80"
     volumes:
-      - ./src:/var/www/laravel_docker
+      - ./src:/var/www/push_app
       - ./apache/default.conf:/etc/apache2/sites-enabled/000-default.conf
     depends_on:
       - database
