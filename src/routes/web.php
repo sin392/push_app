@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\QuoteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,4 +14,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [App\Http\Controllers\QuoteController::class, 'index']);
+Route::get('/', [QuoteController::class, 'index']);

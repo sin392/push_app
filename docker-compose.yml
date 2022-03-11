@@ -9,8 +9,8 @@ services:
       POSTGRES_PASSWORD: password
       POSTGRES_DB: laravel_db
     # コンテナの再起動時にもデータを保持したい場合は以下を有効化
-    volumes:
-      # - ./postgres-data:/var/lib/postgresql/data
+    # volumes:
+    # - ./postgres-data:/var/lib/postgresql/data
     ports:
       - "5432:5432"
 
