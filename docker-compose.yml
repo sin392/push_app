@@ -3,7 +3,7 @@ version: "3"
 services:
   db:
     image: postgres
-    container_name: db
+    container_name: laravel-db
     restart: unless-stopped
     environment:
       POSTGRES_PASSWORD: password
@@ -14,14 +14,16 @@ services:
     ports:
       - "5432:5432"
 
-  php-apache:
+  web:
     container_name: php-apache
     build:
       context: ./php
     ports:
-      - "8080:80"
+      - "8000:8000"
     volumes:
       - ./src:/var/www/push_app
+      - ./scripts:/var/www/push_app/scripts
       - ./apache/default.conf:/etc/apache2/sites-enabled/000-default.conf
     depends_on:
-      - database
+      - db
+    command: bash -c "./scripts/init_db.sh && ./scripts/run_server.sh"

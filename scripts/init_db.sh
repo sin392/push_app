@@ -1,3 +1,3 @@
 # /bin/bash
 
-php artisan migrate && php artisan seed
+php artisan migrate && php artisan db:seed
