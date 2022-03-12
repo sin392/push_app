@@ -12,10 +12,18 @@ const mix = require("laravel-mix");
  |
  */
 
-mix.js("resources/js/app.js", "public/js")
-    .js("resources/js/index.js", "public/js")
-    .postCss("resources/css/app.css", "public/css", [
-        //
-    ]);
+mix.js("resources/js/index.js", "public/js").js(
+    "resources/js/form.js",
+    "public/js"
+);
+// .js("resources/js/app.js", "public/js")
+// .postCss("resources/css/app.css", "public/css", [
+//     //
+// ]);
 
 // mix.env(process.env.ENV_FILE);
+
+// キャッシュによりCSSが反映されないのを避けるため
+if (mix.inProduction()) {
+    mix.version();
+}

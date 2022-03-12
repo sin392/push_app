@@ -4,42 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Form Page</title>
-    <style>
-        .wrapper {
-            margin: 1em auto;
-            width: 95%;
-        }
-    </style>
+    <link href="{{asset('/css/form.css')}}" rel='stylesheet' type='text/css'>
 </head>
 <body>
     <h1>Form Page</h1>
-    <form method='post' onsubmit="handleSubmit(event, this);">
-        <label for="title">Please enter a title for push notification</label>
-        <input type="text" name="title" id="title" >
-        <input type="text" name="body" id="body" >
-        <button>Submit</button>
-    </form>
+    <a href="/">トップ</a>
+    <div class='wrapper'>
+        <form method='post' onsubmit="handleSubmit(event, this);">
+            <label for="title">Please enter a title for push notification</label>
+            <input type="text" name="title" id="title" >
+            <input type="text" name="body" id="body" >
+            <button>Submit</button>
+        </form>
+    </div>
 </body>
-<script>
-    const handleSubmit = (event, form) => {
-        event.preventDefault();
-        const param = {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json; charset=utf-8",
-            },
-            body: JSON.stringify({
-                title: form.title.value,
-                body: form.body.value
-            }),
-        };
-        fetch('http://localhost:8080/api/push', param).then(() => {
-            form.reset();
-        }).catch((e) => {
-            console.log(e);
-            alert('メッセージの送信に失敗しました。');
-        });
-        return false;
-    } 
-</script>
+<script src="{{asset('/js/form.js')}}"></script>
 </html>
