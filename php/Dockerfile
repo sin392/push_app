@@ -15,6 +15,7 @@ RUN apt update \
             zlib1g-dev \
             postgresql-client \
             libgmp-dev \
+            npm \
         && docker-php-ext-install \
             intl \
             opcache \
@@ -29,6 +30,7 @@ RUN apt update \
 
 WORKDIR /var/www/push_app
 
+RUN npm install
 RUN a2enmod rewrite
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 RUN composer require minishlink/web-push

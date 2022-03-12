@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('subscribers', function (Blueprint $table) {
             $table->id();
-            $table->string('endpoint');
+            $table->string('endpoint')->unique();
             $table->string('token');
             $table->string('pub_key');
             // TODO: 自動更新
