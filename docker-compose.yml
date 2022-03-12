@@ -19,11 +19,13 @@ services:
     build:
       context: ./php
     ports:
-      - "8000:8000"
+      - 8080:80
+      # - 8443:443
     volumes:
       - ./src:/var/www/push_app
       - ./scripts:/var/www/push_app/scripts
       - ./apache/default.conf:/etc/apache2/sites-enabled/000-default.conf
+      # - ./apache/certs:/etc/apache2/ssl/certs
     depends_on:
       - db
     command: bash -c "./scripts/init_db.sh && ./scripts/run_server.sh"
