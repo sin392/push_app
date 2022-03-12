@@ -16,6 +16,7 @@
     <form method='post' onsubmit="handleSubmit(event, this);">
         <label for="title">Please enter a title for push notification</label>
         <input type="text" name="title" id="title" >
+        <input type="text" name="body" id="body" >
         <button>Submit</button>
     </form>
 </body>
@@ -29,6 +30,7 @@
             },
             body: JSON.stringify({
                 title: form.title.value,
+                body: form.body.value
             }),
         };
         fetch('http://localhost:8080/api/push', param).then(() => {

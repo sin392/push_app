@@ -4,7 +4,7 @@ self.addEventListener("push", function (event) {
     console.log("receive", data);
     const options = {
         // body: event.data.text(), // サーバーからのメッセージ
-        body: "",
+        body: data.body,
         tag: data.title, // タイトル
         // icon: "icon-512x512.png", // アイコン
         // badge: "icon-512x512.png", // アイコン

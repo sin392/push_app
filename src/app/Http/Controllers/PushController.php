@@ -7,10 +7,6 @@ use Minishlink\WebPush\WebPush;
 use Minishlink\WebPush\Subscription;
 use App\Models\Subscriber;
 
-// const VAPID_SUBJECT = 'http://localhost:8080';
-// const PUBLIC_KEY = 'BGCBsWD2wckI_Ym0UoHiKEXcV3W_-LPMVzbDA5yjtbuhmm9cYQH16IydrxHtTyFTBGsCylpvL-nakhm0sMHGk-E';
-// const PRIVATE_KEY = 'EJDBRvAw_Jczn6hbUlVl049D0pHjPXzQxydlDY5pqkI';
-
 class PushController extends Controller
 {
     public function subscribe (Request $request) {
@@ -46,7 +42,8 @@ class PushController extends Controller
             $webPush->queueNotification(
                 $subscription,
                 json_encode([
-                    'title' => $request->title
+                    'title' => $request->title,
+                    'body' => $request->body
                 ])
             );
         }
