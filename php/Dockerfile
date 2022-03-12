@@ -21,6 +21,9 @@ RUN apt update \
             pdo_pgsql \
             pgsql
 
+# SSL有効化
+# RUN a2enmod ssl
+
 WORKDIR /var/www/push_app
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
