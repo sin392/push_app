@@ -14,16 +14,21 @@ RUN apt update \
             zip \
             zlib1g-dev \
             postgresql-client \
+            libgmp-dev \
         && docker-php-ext-install \
             intl \
             opcache \
             pdo \
             pdo_pgsql \
-            pgsql
+            pgsql \
+            gmp
 
 # SSL有効化
 # RUN a2enmod ssl
 
+
 WORKDIR /var/www/push_app
 
+RUN a2enmod rewrite
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+RUN composer require minishlink/web-push

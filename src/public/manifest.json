@@ -1,0 +1,9 @@
+{
+    "name": "push_app",
+    "short_name": "push_app",
+    "theme_color": "#44518d",
+    "background_color": "#2e3659",
+    "display": "standalone",
+    "scope": "/",
+    "start_url": "/"
+}
