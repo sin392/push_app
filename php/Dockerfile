@@ -5,6 +5,9 @@ FROM php:8.0-apache
 # RUN apt install -y g++ libicu-dev libpq-dev libzip-dev zip zlib1g-dev
 # RUN docker-php-ext-install intl apache pdo pdo_pgsql pgsql
 
+ARG PORT
+ENV PORT ${PORT}
+
 RUN apt update \
         && apt install -y \
             g++ \
@@ -39,5 +42,6 @@ RUN composer require minishlink/web-push
 COPY ./src /var/www/push_app
 COPY ./scripts /var/www/push_app/scripts
 COPY ./apache/default.conf /etc/apache2/sites-enabled/000-default.conf
+RUN sed -i "s/VirtualHost \*:80/VirtualHost \*:${PORT:-80}/g" /etc/apache2/sites-available/000-default.conf
 
 CMD bash -c "./scripts/init_db.sh && ./scripts/run_server.sh"

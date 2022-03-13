@@ -14,6 +14,10 @@
 $app = new Illuminate\Foundation\Application(
     $_ENV['APP_BASE_PATH'] ?? dirname(__DIR__)
 );
+// .envの参照位置変更
+// ref: https://qiita.com/m-seikou/items/ea373e37626d85cfc2d9
+// srcより上位階層を読み込むために追加の設定が必要？
+// $app->useEnvironmentPath(realpath(__DIR__ . '/../../'));
 
 /*
 |--------------------------------------------------------------------------
