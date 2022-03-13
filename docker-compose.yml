@@ -3,7 +3,7 @@ version: "3"
 services:
   db:
     image: postgres
-    container_name: laravel-db
+    container_name: laravel_db
     restart: unless-stopped
     environment:
       POSTGRES_PASSWORD: password
@@ -15,9 +15,11 @@ services:
       - "5432:5432"
 
   web:
-    container_name: php-apache
+    container_name: push_app_web
+    image: push_app_web
     build:
-      context: ./php
+      context: ./
+      dockerfile: ./php/Dockerfile
     ports:
       - ${APP_PORT}:80
       # - 8443:443

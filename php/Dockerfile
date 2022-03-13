@@ -34,3 +34,10 @@ RUN npm install
 RUN a2enmod rewrite
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 RUN composer require minishlink/web-push
+
+# Heroku利用のためのソースコピー
+COPY ./src /var/www/push_app
+COPY ./scripts /var/www/push_app/scripts
+COPY ./apache/default.conf /etc/apache2/sites-enabled/000-default.conf
+
+CMD bash -c "./scripts/init_db.sh && ./scripts/run_server.sh"
