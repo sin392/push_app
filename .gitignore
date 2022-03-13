@@ -3,3 +3,7 @@ postgres-data
 apache/certs
 *.pem
 *.key
+
+.env
+.env.*
+!.env.example
