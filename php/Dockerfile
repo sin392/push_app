@@ -34,14 +34,14 @@ RUN apt update \
 # RUN a2enmod ssl
 
 
+WORKDIR /var/www/push_app
 
 RUN npm install
 RUN a2enmod rewrite
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-RUN composer install
+RUN cd  /var/www/push_app && composer install
 RUN composer require minishlink/web-push
 
-WORKDIR /var/www/push_app
 
 # Heroku利用のためのソースコピー
 COPY ./src /var/www/push_app
