@@ -40,6 +40,7 @@ COPY ./apache/default.conf /etc/apache2/sites-enabled/000-default.conf
 
 WORKDIR /var/www/push_app
 RUN npm install
+RUN npm install -S browser-sync browser-sync-webpack-plugin
 RUN a2enmod rewrite
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 RUN composer require minishlink/web-push

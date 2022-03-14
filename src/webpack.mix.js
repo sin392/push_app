@@ -27,3 +27,11 @@ mix.js("resources/js/index.js", "public/js").js(
 if (mix.inProduction()) {
     mix.version();
 }
+
+// bladeのホットリロード
+mix.browserSync({
+    proxy: {
+        target: "http://localhost:8080",
+    },
+    files: ["resources/views/**/*.blade.php"],
+});
