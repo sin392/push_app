@@ -44,6 +44,8 @@ RUN a2enmod rewrite
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 RUN composer require minishlink/web-push
 
+# ref: https://shiraberu.tech/2021/11/27/laravel-storage-permission-error-fix/
+RUN chmod 777 -R ./storage
 
 RUN rm -f /etc/apache2/mpm_event.*
 RUN sed -i "s/Listen 80/Listen ${PORT:-80}/g" /etc/apache2/ports.conf
