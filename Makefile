@@ -6,3 +6,6 @@ deploy:
 
 dump:
 	docker-compose exec db bash -c "pg_dump laravel_db -U postgres > /postgres/dump.sql"
+
+watch:
+	docker-compose run web npm run watch

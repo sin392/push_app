@@ -16,6 +16,17 @@ mix.js("resources/js/index.js", "public/js").js(
     "resources/js/form.js",
     "public/js"
 );
+// not work
+// .browserSync({
+//     // container_name
+//     proxy: {
+//         target: "http://localhost:8080",
+//     },
+//     files: ["resources/views/**/*.blade.php", "public/**/*"],
+//     open: false,
+//     reloadOnRestart: true,
+// });
+
 // .js("resources/js/app.js", "public/js")
 // .postCss("resources/css/app.css", "public/css", [
 //     //
@@ -27,11 +38,3 @@ mix.js("resources/js/index.js", "public/js").js(
 if (mix.inProduction()) {
     mix.version();
 }
-
-// bladeのホットリロード
-mix.browserSync({
-    proxy: {
-        target: "http://localhost:8080",
-    },
-    files: ["resources/views/**/*.blade.php"],
-});
