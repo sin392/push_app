@@ -11,6 +11,8 @@ services:
     # コンテナの再起動時にもデータを保持したい場合は以下を有効化
     # volumes:
     # - ./postgres-data:/var/lib/postgresql/data
+    volumes:
+      - ./postgres.sql:/postgres
     ports:
       - "5432:5432"
 
