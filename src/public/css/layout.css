@@ -24,19 +24,39 @@ body {
     justify-content: space-between;
 }
 .header > div {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.header > div > .nav-items {
     color: rgb(200, 200, 200);
     /* display: flex; */
     /* align-items: center; */
     font-size: x-large;
-}
-.header > div {
     display: flex;
     gap: 10px;
+    margin-right: 20px;
 }
-.header > div > a:hover {
+.header > div > div > a:hover {
     color: white !important;
 }
-
+.header > div > .icon-wrapper {
+    /* border: 1px solid; */
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.header > div > .icon-wrapper:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+.header > div > div > .material-icons {
+    display: flex;
+    align-items: center;
+    font-size: xx-large;
+}
 .footer {
     height: 40px;
     color: white;
