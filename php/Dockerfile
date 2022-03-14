@@ -39,7 +39,7 @@ WORKDIR /var/www/push_app
 RUN npm install
 RUN a2enmod rewrite
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-RUN cd  /var/www/push_app && composer install
+RUN cd /var/www/push_app && composer install
 RUN composer require minishlink/web-push
 
 
