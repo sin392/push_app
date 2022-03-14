@@ -42,7 +42,6 @@ WORKDIR /var/www/push_app
 RUN npm install
 RUN a2enmod rewrite
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-RUN composer install
 RUN composer require minishlink/web-push
 
 
@@ -51,4 +50,4 @@ RUN sed -i "s/Listen 80/Listen ${PORT:-80}/g" /etc/apache2/ports.conf
 RUN sed -i "s/Listen 80/Listen ${PORT:-80}/g" /etc/apache2/apache2.conf
 RUN sed -i "s/VirtualHost \*:80/VirtualHost \*:${PORT:-80}/g" /etc/apache2/sites-enabled/000-default.conf
 
-CMD bash -c "./scripts/init_db.sh && ./scripts/run_server.sh"
+CMD bash -c "composer install && ./scripts/init_db.sh && ./scripts/run_server.sh"

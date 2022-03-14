@@ -32,4 +32,4 @@ services:
       # - ./apache/certs:/etc/apache2/ssl/certs
     depends_on:
       - db
-    # command: bash -c "./scripts/init_db.sh && ./scripts/run_server.sh"
+    command: bash -c "composer install && ./scripts/init_db.sh && ./scripts/run_server.sh"
