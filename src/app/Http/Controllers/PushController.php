@@ -5,22 +5,22 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Minishlink\WebPush\WebPush;
 use Minishlink\WebPush\Subscription;
-use App\Models\Subscriber;
+use Illuminate\Support\Facades\DB;
 
 class PushController extends Controller
 {
     public function subscribe (Request $request) {
-        $record = Subscriber::where('endpoint', $request->endpoint);
+        $record = DB::table('subscribers')->where('endpoint', $request->endpoint);
         info($request);
         if ($record->exists()) {
             $item = $record->update(['endpoint' => $request->endpoint, 'token' => $request->token, 'pub_key' => $request->pub_key]);
         } else {
-            $item = Subscriber::create(['endpoint' => $request->endpoint, 'token' => $request->token, 'pub_key' => $request->pub_key]);
+            $item = DB::table('subscribers')->insert(['endpoint' => $request->endpoint, 'token' => $request->token, 'pub_key' => $request->pub_key]);
         }
     }
 
     public function push(Request $request){
-        $subscribers = Subscriber::all();
+        $subscribers = DB::table('subscribers')->get();
 
         // ブラウザに認証させる
         $auth = [

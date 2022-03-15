@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MessageController;
+use App\Http\Controllers\ListController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +24,4 @@ Route::get('/form', function () {
 });
 
 Route::get('/messages', [MessageController::class,'messages']);
+Route::get('/subscribers', [ListController::class, 'subscribers']);
