@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts.layout')
 
 @section('title', 'Message List Page')
 
@@ -21,9 +21,6 @@
             <tbody>
                 @foreach ($messages as $message)
                     <tr>
-                        {{-- @foreach ($message as $key => $value)
-                            <td>{{ $value }}</td>
-                        @endforeach --}}
                         <td>{{ $message->id }}</td>
                         <td>{{ $message->title }}</td>
                         <td>{{ $message->body }}</td>

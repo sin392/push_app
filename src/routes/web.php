@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\ListController;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,10 +25,10 @@ Route::get('/form', function () {
     return view('pages/form');
 });
 
-Route::get('/messages', [MessageController::class,'messages']);
+Route::get('/messages', [MessageController::class, 'messages']);
 
 Route::get('/subscribers', [ListController::class, 'subscribers']);
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Auth::routes();

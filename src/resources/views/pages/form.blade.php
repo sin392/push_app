@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts.layout')
 
 @section('title', 'Form Page')
 
@@ -15,9 +15,7 @@
                 <label for="title" class="form-label">Message</label>
                 <input type="text" placeholder="本文を入力" name="body" id="body" class="form-control">
             </div>
-            {{-- <div class="mx-auto"> --}}
             <button type="submit" class="btn btn-primary">Submit</button>
-            {{-- </div> --}}
         </form>
     </div>
 @endsection
