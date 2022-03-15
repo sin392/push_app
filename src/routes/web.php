@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\TestController;
 use App\Http\Controllers\MessageController;
 
 /*
@@ -22,8 +21,5 @@ Route::get('/', function () {
 Route::get('/form', function () {
     return view('pages/form');
 });
-
-
-Route::get('/index', [TestController::class,'index']);
 
 Route::get('/messages', [MessageController::class,'messages']);
