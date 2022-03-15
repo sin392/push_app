@@ -8,16 +8,20 @@ class TestController extends Controller
 {
     public function index () 
     {
-        // $hello = 'Hello,World!';
-        // $hello_array = array();
-
         $message_array = [
-            ['id1' => 'message1'], 
-            ['id2' => 'message2'], 
-            ['id3' => 'message3'],
+            ['id' => 'id1',
+             'message' => 'message1'
+            ], 
+            ['id' => 'id2',
+             'message' => 'message2'
+            ], 
+            ['id' => 'id3',
+            'message' => 'message3'
+            ], 
         ];
-
+        
+        // $message_array = array_column($message_array, 'id','message');
         // return view('test', compact('hello', 'hello_array'));
-        return view('test', ['message_array' => $message_array]);
+        return view('pages/test', compact('message_array'));
     }
 }

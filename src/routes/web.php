@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestController;
+use App\Http\Controllers\MessageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,3 +25,5 @@ Route::get('/form', function () {
 
 
 Route::get('/index', [TestController::class,'index']);
+
+Route::get('/messages', [MessageController::class,'messages']);
