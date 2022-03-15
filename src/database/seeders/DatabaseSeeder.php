@@ -1,6 +1,7 @@
 <?php
 use Illuminate\Database\Seeder;
 use Database\Seeders\MessageSeeder;
+use Database\Seeders\PublisherSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -12,5 +13,6 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call(MessageSeeder::class);
+        $this->call(PublisherSeeder::class);
     }
 }
