@@ -1,0 +1,49 @@
+html,
+body {
+    height: 100%;
+    background-color: gray !important;
+}
+#app {
+    height: 100%;
+    background-color: white !important;
+    display: flex;
+    flex-direction: column;
+}
+#app > main {
+    flex-grow: 1;
+}
+.navbar {
+    width: 100% !important;
+    height: 80px;
+    background-color: gray !important;
+}
+.navbar-brand {
+    color: white !important;
+    font-size: xx-large;
+}
+.nav-link {
+    color: white !important;
+    font-size: x-large;
+}
+
+.navbar > .container {
+    width: 100% !important;
+    color: white !important;
+    padding: 0 50px;
+    margin: 0;
+    max-width: none !important;
+}
+
+#navbarSupportContent {
+    float: right;
+}
+
+.footer {
+    height: 40px;
+    color: white;
+    background-color: gray;
+    padding: 0 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
