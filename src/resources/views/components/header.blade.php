@@ -4,7 +4,7 @@
         <div class='nav-items'>
             <a href="/" style="text-decoration:none; color: inherit; display: inline-block;">Top</a>
             <a href="/form" style="text-decoration:none; color: inherit; display: inline-block;">Form</a>
-            <a href="#!" style="text-decoration:none; color: inherit; display: inline-block;">View</a>
+            <a href="/messages" style="text-decoration:none; color: inherit; display: inline-block;">View</a>
         </div>
         <div class="icon-wrapper">
             <span class="material-icons">settings</span>
