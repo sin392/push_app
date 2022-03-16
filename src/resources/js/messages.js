@@ -32,3 +32,7 @@ window.handleDeleteMessage = (event, message) => {
         });
     location.reload();
 };
+
+window.handleSelect = (event) => {
+    location.href = `http://localhost:8080/list/${event.target.value}`;
+};

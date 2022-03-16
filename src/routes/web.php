@@ -1,10 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\MessageController;
-use App\Http\Controllers\ListController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MessageController;
+use App\Http\Controllers\SubscriberController;
+use App\Http\Controllers\PublisherController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,9 +26,10 @@ Route::get('/form', function () {
     return view('pages/form');
 });
 
-Route::get('/messages', [MessageController::class, 'messages']);
-
-Route::get('/subscribers', [ListController::class, 'subscribers']);
+Route::redirect('/list', '/list/messages');
+Route::get('/list/messages', [MessageController::class, 'messages']);
+Route::get('/list/subscribers', [SubscriberController::class, 'subscribers']);
+Route::get('/list/publishers', [PublisherController::class, 'publishers']);
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 

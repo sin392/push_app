@@ -3,13 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
+use Exception;
 
-class ListController extends Controller
+class SubscriberController extends Controller
 {
     public function subscribers()
     {
         $subscribers = DB::table('subscribers')->get();
 
-        return view('pages/subscribers', compact('subscribers'));
+        return view('pages/subscribers', ['items' => $subscribers]);
     }
 }

@@ -1,11 +1,13 @@
 @extends('layouts.list-layout')
 
-@section('title', 'Subscribers List Page')
+@section('title', 'Publishers List Page')
+
+@section('content')
 
 @section('table-header')
     <tr>
         <th scope="col">#</th>
-        <th scope="col">endpoint</th>
+        <th scope="col">user_id</th>
         <th scope="col">created_at</th>
     </tr>
 @endsection
@@ -14,7 +16,7 @@
     @foreach ($items as $subscriber)
         <tr>
             <td>{{ $subscriber->id }}</td>
-            <td>{{ $subscriber->endpoint }}</td>
+            <td>{{ $subscriber->user_id }}</td>
             <td>{{ $subscriber->created_at }}</th>
         </tr>
     @endforeach

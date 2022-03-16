@@ -11,7 +11,7 @@ class MessageController extends Controller
     {
         $messages = DB::table('messages')->get();
 
-        return view('pages/messages', compact('messages'));
+        return view('pages/messages', ['items' => $messages]);
     }
 
 

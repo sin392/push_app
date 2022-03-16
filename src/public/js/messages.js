@@ -33,5 +33,9 @@ window.handleDeleteMessage = function (event, message) {
   });
   location.reload();
 };
+
+window.handleSelect = function (event) {
+  location.href = "http://localhost:8080/list/".concat(event.target.value);
+};
 /******/ })()
 ;
