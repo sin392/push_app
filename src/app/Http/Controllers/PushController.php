@@ -13,8 +13,8 @@ class PushController extends Controller
 {
     public function subscribe(Request $request)
     {
+        // 一度500出てreconnect
         try {
-
             $record = DB::table('subscribers')->where('endpoint', $request->endpoint);
             info($request);
             if ($record->exists()) {
@@ -88,6 +88,7 @@ class PushController extends Controller
         } catch (Exception $ex) {
             info($ex);
             return response('fail', 500);
+            return $ex;
         }
     }
 }

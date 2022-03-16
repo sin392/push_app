@@ -1,4 +1,7 @@
 <?php
+
+namespace Database\Seeders;
+
 use Illuminate\Database\Seeder;
 use Database\Seeders\MessageSeeder;
 use Database\Seeders\PublisherSeeder;
