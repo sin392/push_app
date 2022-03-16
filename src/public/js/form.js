@@ -5,6 +5,12 @@ var __webpack_exports__ = {};
   \******************************/
 window.handleSubmit = function (event, form) {
   event.preventDefault();
+
+  if (!(form.title.value && form.body.value)) {
+    alert("フォームに値を入力してください。");
+    return false;
+  }
+
   var param = {
     method: "POST",
     headers: {
@@ -16,6 +22,7 @@ window.handleSubmit = function (event, form) {
     })
   };
   fetch("http://localhost:8080/api/push", param).then(function () {
+    alert("メッセージを送信しました。");
     form.reset();
   })["catch"](function (e) {
     console.log(e);

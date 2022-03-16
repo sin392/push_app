@@ -12,10 +12,9 @@ const mix = require("laravel-mix");
  |
  */
 
-mix.js("resources/js/index.js", "public/js").js(
-    "resources/js/form.js",
-    "public/js"
-);
+mix.js("resources/js/index.js", "public/js")
+    .js("resources/js/form.js", "public/js")
+    .js("resources/js/messages.js", "public/js");
 // not work
 // .browserSync({
 //     // container_name

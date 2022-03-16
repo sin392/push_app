@@ -9,12 +9,27 @@ self.addEventListener("push", function (event) {
         // icon: "icon-512x512.png", // アイコン
         // badge: "icon-512x512.png", // アイコン
         actions: [
-            { action: 'action1', title: "button1" },
-            { action: 'action2', title: "button2" }
-        ]
+            { action: "action1", title: "button1" },
+            { action: "action2", title: "button2" },
+        ],
     };
 
-    event.waitUntil(self.registration.showNotification(data.title, options));
+    event.waitUntil(
+        self.registration
+            .showNotification(data.title, options)
+            // 通知後3秒後に自動でclose
+            // NOTE: 同じ内容のpushは以前のものがcloseされないと表示されない
+            .then(() => self.registration.getNotifications())
+            .then((notifications) =>
+                setTimeout(
+                    () =>
+                        notifications.forEach((notification) =>
+                            notification.close()
+                        ),
+                    3000
+                )
+            )
+    );
 });
 
 // プッシュ通知をクリックしたときのイベント
@@ -26,14 +41,10 @@ self.addEventListener("notificationclick", function (event) {
     //     clients.openWindow("http://localhost:8080")
     // );
 
-    if (event.action === 'action1') {
-        event.waitUntil(
-            clients.openWindow("http://localhost:8080")
-        );
-    } else if (event.action === 'action2') {
-        event.waitUntil(
-            clients.openWindow("http://localhost:8080/messages")
-        );
+    if (event.action === "action1") {
+        event.waitUntil(clients.openWindow("http://localhost:8080"));
+    } else if (event.action === "action2") {
+        event.waitUntil(clients.openWindow("http://localhost:8080/messages"));
     }
 });
 
