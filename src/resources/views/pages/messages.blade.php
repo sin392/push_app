@@ -9,6 +9,7 @@
 @section('content')
 @section('table-header')
     <tr>
+        <th scope="col"></th>
         <th scope="col">#</th>
         <th scope="col">title</th>
         <th scope="col">body</th>
@@ -20,6 +21,7 @@
 @section('table-body')
     @foreach ($items as $message)
         <tr>
+            <td style="width:30px;"><input type="checkbox" class="form-check-input"></td>
             <td>{{ $message->id }}</td>
             <td>{{ $message->title }}</td>
             <td>{{ $message->body }}</td>

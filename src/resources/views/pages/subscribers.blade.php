@@ -4,6 +4,7 @@
 
 @section('table-header')
     <tr>
+        <th scope="col"></th>
         <th scope="col">#</th>
         <th scope="col">endpoint</th>
         <th scope="col">created_at</th>
@@ -13,6 +14,7 @@
 @section('table-body')
     @foreach ($items as $subscriber)
         <tr>
+            <td style="width:30px;"><input type="checkbox" class="form-check-input"></td>
             <td>{{ $subscriber->id }}</td>
             <td>{{ $subscriber->endpoint }}</td>
             <td>{{ $subscriber->created_at }}</th>
