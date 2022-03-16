@@ -72,9 +72,9 @@ class ApiTest extends TestCase
         );
     }
 
-    // public function test_push_post_null_params_fail(): void
-    // {
-    //     $response = $this->post('/api/unknown');
-    //     $response->assertStatus(404);
-    // }
+    public function test_push_post_null_params_fail(): void
+    {
+        $response = $this->post('/api/push', []);
+        $response->assertStatus(500);
+    }
 }
