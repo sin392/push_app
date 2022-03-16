@@ -6,7 +6,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
-class ApiTest extends TestCase
+class ViewTest extends TestCase
 {
     use RefreshDatabase;
 
