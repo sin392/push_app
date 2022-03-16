@@ -24,10 +24,10 @@
             </ul>
             </p>
         </div>
-        <div class="mt-1">
+        {{-- <div class="mt-1">
             <p>また、以下のボタンで購読登録に関係なく通知をテストすることができます。</p>
             <button onclick="handleClick();" class="btn btn-primary">通知</button>
-        </div>
+        </div> --}}
     </div>
 @endsection
 

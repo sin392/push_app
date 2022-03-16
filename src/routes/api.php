@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PushController;
+use App\Http\Controllers\MessageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,3 +23,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('/subscribe', [PushController::class, 'subscribe']);
 
 Route::post('/push', [PushController::class, 'push']);
+
+Route::delete('/messages/{message_id}', [MessageController::class, 'delete']);

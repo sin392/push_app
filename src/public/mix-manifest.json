@@ -1,4 +1,6 @@
 {
     "/js/index.js": "/js/index.js",
-    "/js/form.js": "/js/form.js"
+    "/js/list-layout.js": "/js/list-layout.js",
+    "/js/form.js": "/js/form.js",
+    "/js/messages.js": "/js/messages.js"
 }
