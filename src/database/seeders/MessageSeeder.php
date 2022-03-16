@@ -21,13 +21,13 @@ class MessageSeeder extends Seeder
             'created_at' => date("Y-m-d H:i:s"),
         ], [
             'publisher_id' => '',
-            'title' => 'title-1',
-            'body' => 'body-1',
+            'title' => 'title-2',
+            'body' => 'body-2',
             'created_at' => date("Y-m-d H:i:s"),
         ], [
             'publisher_id' => '',
-            'title' => 'title-1',
-            'body' => 'body-1',
+            'title' => 'title-3',
+            'body' => 'body-3',
             'created_at' => date("Y-m-d H:i:s"),
         ]);
     }
