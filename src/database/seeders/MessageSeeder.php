@@ -16,8 +16,18 @@ class MessageSeeder extends Seeder
     {
         DB::table('messages')->insert([
             'publisher_id' => '',
-            'title' => 'title',
-            'body' => 'body',
+            'title' => 'title-1',
+            'body' => 'body-1',
+            'created_at' => date("Y-m-d H:i:s"),
+        ], [
+            'publisher_id' => '',
+            'title' => 'title-1',
+            'body' => 'body-1',
+            'created_at' => date("Y-m-d H:i:s"),
+        ], [
+            'publisher_id' => '',
+            'title' => 'title-1',
+            'body' => 'body-1',
             'created_at' => date("Y-m-d H:i:s"),
         ]);
     }
