@@ -8,6 +8,10 @@ self.addEventListener("push", function (event) {
         tag: data.title, // タイトル
         // icon: "icon-512x512.png", // アイコン
         // badge: "icon-512x512.png", // アイコン
+        actions: [
+            { action: 'action1', title: "button1" },
+            { action: 'action2', title: "button2" }
+        ]
     };
 
     event.waitUntil(self.registration.showNotification(data.title, options));
@@ -18,10 +22,17 @@ self.addEventListener("notificationclick", function (event) {
     event.notification.close();
 
     // サービスワーカーの中で環境変数使えない？
-    // event.waitUntil(
     //     // プッシュ通知をクリックしたときにブラウザを起動して表示するURL
     //     clients.openWindow("https://localhost:8080")
-    // );
+    if (event.action === 'action1') {
+        event.waitUntil(
+            clients.openWindow("http://localhost:8080")
+        );
+    } else if (event.action === 'action2') {
+        event.waitUntil(
+            clients.openWindow("http://localhost:8080/messages")
+        );
+    }
 });
 
 // Service Worker インストール時に実行される
