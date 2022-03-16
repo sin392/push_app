@@ -28,10 +28,10 @@ class PushController extends Controller
                     'updated_at' => date("Y-m-d H:i:s"),
                 ]);
             }
-            return 200;
+            return response('success', 200);
         } catch (Exception $ex) {
             info($ex);
-            return 500;
+            return response('fail', 500);
         }
     }
 
@@ -84,10 +84,10 @@ class PushController extends Controller
                 }
             }
 
-            return 200;
+            return response('success', 200);
         } catch (Exception $ex) {
             info($ex);
-            return 500;
+            return response('fail', 500);
         }
     }
 }
