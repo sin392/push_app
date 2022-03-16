@@ -13,11 +13,11 @@
 @endsection
 
 @section('table-header')
-    @foreach ($items as $subscriber)
+    @foreach ($items as $publisher)
         <tr>
-            <td>{{ $subscriber->id }}</td>
-            <td>{{ $subscriber->user_id }}</td>
-            <td>{{ $subscriber->created_at }}</th>
+            <td>{{ $publisher->id }}</td>
+            <td>{{ $publisher->user_id }}</td>
+            <td>{{ $publisher->created_at }}</th>
         </tr>
     @endforeach
 @endsection

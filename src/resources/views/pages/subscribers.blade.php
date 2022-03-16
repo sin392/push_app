@@ -10,7 +10,7 @@
     </tr>
 @endsection
 
-@section('table-header')
+@section('table-body')
     @foreach ($items as $subscriber)
         <tr>
             <td>{{ $subscriber->id }}</td>
