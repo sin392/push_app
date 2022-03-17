@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('publisher_id')->nullable();
             $table->string('title');
             $table->string('body');
+            $table->dateTime('scheduled_at')->nullable();
+            $table->boolean('is_sended');
         });
     }
 

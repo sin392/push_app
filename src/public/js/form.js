@@ -18,7 +18,9 @@ window.handleSubmit = function (event, form) {
     },
     body: JSON.stringify({
       title: form.title.value,
-      body: form.body.value
+      body: form.body.value,
+      scheduled_at: form.scheduled_at.value,
+      is_sended: !!form.is_sended
     })
   };
   fetch("http://localhost:8080/api/push", param).then(function () {

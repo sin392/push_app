@@ -54,8 +54,10 @@ class PushController extends Controller
                 'publisher_id' => 'not implemented',
                 'title' => $request->title,
                 'body' => $request->body,
+                'scheduled_at' => $request->scheduled_at,
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s"),
+                'is_sended' => $request->is_sended,
             ]);
 
             foreach ($subscribers as &$subscriber) {
@@ -70,7 +72,7 @@ class PushController extends Controller
                     $subscription,
                     json_encode([
                         'title' => $request->title,
-                        'body' => $request->body
+                        'body' => $request->body,
                     ])
                 );
             }

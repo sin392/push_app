@@ -2,8 +2,10 @@
 
 namespace App\Console;
 
+use DateTime;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use Illuminate\Support\Facades\DB;
 
 class Kernel extends ConsoleKernel
 {
@@ -15,7 +17,16 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')->hourly();
+        $schedule->call(function () {
+            $records = DB::table('messages')->where('is_sended', false)->get();
+            foreach ($records as $record) {
+                if (strtotime($records->scheduled_at) < time()) {
+                    DB::table('messages')->where('id', $record->id)->update([
+                        'is_sended' => true
+                    ]);
+                }
+            }
+        })->everyMinute();
     }
 
     /**
@@ -25,7 +36,7 @@ class Kernel extends ConsoleKernel
      */
     protected function commands()
     {
-        $this->load(__DIR__.'/Commands');
+        $this->load(__DIR__ . '/Commands');
 
         require base_path('routes/console.php');
     }

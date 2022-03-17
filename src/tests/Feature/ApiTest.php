@@ -23,6 +23,8 @@ class ApiTest extends TestCase
             'publisher_id' => 'not implemented',
             'title' => 'test_title',
             'body' => 'test_body',
+            'scheduled_at' => '2000-01-01 00:00:00',
+            'is_sended' => true,
         ];
     }
 
@@ -62,6 +64,8 @@ class ApiTest extends TestCase
             'publisher_id' => 'not implemented',
             'title' => str_repeat('*', 256),
             'body' => str_repeat('*', 256),
+            'scheduled_at' => '2000-01-01 00:00:00',
+            'is_sended' => true,
         ];
         $response = $this->post('/api/push', $message);
         $response->assertStatus(500);

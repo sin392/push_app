@@ -14,7 +14,9 @@
         <th scope="col">title</th>
         <th scope="col">body</th>
         <th scope="col">publisher_id</th>
+        <th scope="col">scheduled_at</th>
         <th scope="col">created_at</th>
+        <th scope="col">is_sended</th>
         <th scope="col">ACTION</th>
     </tr>
 @endsection
@@ -26,7 +28,9 @@
             <td>{{ $message->title }}</td>
             <td>{{ $message->body }}</td>
             <td>{{ $message->publisher_id }}</td>
+            <td>{{ $message->scheduled_at }}</td>
             <td>{{ $message->created_at }}</td>
+            <td>{{ $message->is_sended ? '○' : '' }}</td>
             <td>
                 <div class="button-wrapper">
                     <button type="submit" class="btn btn-primary"
