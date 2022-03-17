@@ -9,3 +9,4 @@ apache/certs
 !.env.example
 
 .vscode
+.DS_Store
