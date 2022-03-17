@@ -14,6 +14,12 @@
                 <input type="text" placeholder="タイトルを入力" name="title" id="title" class="form-control">
                 <label for="title" class="form-label">Message</label>
                 <input type="text" placeholder="本文を入力" name="body" id="body" class="form-control">
+                <label for="title" class="form-label">Button1URL</label>
+                <input type="url" placeholder="URLを入力" name="url1" id="url1" class="form-control"
+                    patarn="[http|https]://.*">
+                <label for="title" class="form-label">Button2URL</label>
+                <input type="url" placeholder="URLを入力" name="url2" id="url2" class="form-control"
+                    patarn="[http|https]://.*">
             </div>
             {{-- <div class="mx-auto"> --}}
             <button type="submit" class="btn btn-primary">Submit</button>

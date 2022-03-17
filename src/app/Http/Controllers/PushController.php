@@ -43,7 +43,9 @@ class PushController extends Controller
                 $subscription,
                 json_encode([
                     'title' => $request->title,
-                    'body' => $request->body
+                    'body' => $request->body,
+                    'url1' => $request->url1,
+                    'url2' => $request->url2
                 ])
             );
         }

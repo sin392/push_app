@@ -8,6 +8,8 @@ window.handleSubmit = (event, form) => {
         body: JSON.stringify({
             title: form.title.value,
             body: form.body.value,
+            url1: form.url1.value,
+            url2: form.url2.value
         }),
     };
     fetch("http://localhost:8080/api/push", param)
