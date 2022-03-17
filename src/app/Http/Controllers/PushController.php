@@ -54,7 +54,7 @@ class PushController extends Controller
                 'publisher_id' => 'not implemented',
                 'title' => $request->title,
                 'body' => $request->body,
-                'scheduled_at' => $request->scheduled_at,
+                'scheduled_at' => $request->scheduled_at ?? date("Y-m-d H:i:s"),
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s"),
                 'is_sended' => $request->is_sended,
