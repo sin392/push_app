@@ -20,7 +20,7 @@ window.handleSubmit = function (event, form) {
       title: form.title.value,
       body: form.body.value,
       scheduled_at: form.scheduled_at.value,
-      is_sended: !!form.is_sended
+      is_sended: !!form.scheduled_at
     })
   };
   fetch("http://localhost:8080/api/push", param).then(function () {
